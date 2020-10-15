@@ -1,7 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from "styled-components/macro";
 
 export default function Counter({count,countUp,countDown}) {
+    //useEffect on unmount in combination with App.js line 24
+    // (if count smaller 10 show counter)
+    useEffect(()=> {
+            return ()=> console.log("unmount");
+            }, []
+    );
+
     return <StyledCounter>
         <h1>Count: {count}</h1>
         <div>
